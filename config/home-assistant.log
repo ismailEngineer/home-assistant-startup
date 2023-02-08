@@ -1,0 +1,103 @@
+2023-01-30 02:24:13.802 WARNING (Recorder) [homeassistant.components.recorder.util] The system could not validate that the sqlite3 database at //config/home-assistant_v2.db was shutdown cleanly
+2023-01-30 02:27:09.614 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:27:28.291 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:27:34.762 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:27:44.473 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:28:02.925 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:29:06.882 ERROR (MainThread) [homeassistant.components.freebox.config_flow] Unknown error connecting with Freebox router at kkamv5xe.fbxos.fr
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 986, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1064, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1049, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 960, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 500, in sock_connect
+    return await fut
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 535, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('88.160.161.86', 2233)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/freebox/config_flow.py", line 75, in async_step_link
+    await fbx.open(self._host, self._port)
+  File "/usr/local/lib/python3.10/site-packages/freebox_api/aiofreepybox.py", line 83, in open
+    self._access = await self._get_freebox_access(
+  File "/usr/local/lib/python3.10/site-packages/freebox_api/aiofreepybox.py", line 162, in _get_freebox_access
+    app_token, track_id = await self._get_app_token(base_url, app_desc, timeout)
+  File "/usr/local/lib/python3.10/site-packages/freebox_api/aiofreepybox.py", line 226, in _get_app_token
+    r = await self._session.post(url, data=data, timeout=timeout)
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/client.py", line 535, in _request
+    conn = await self._connector.connect(
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 542, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 907, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 1175, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 992, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host kkamv5xe.fbxos.fr:2233 ssl:default [Connect call failed ('88.160.161.86', 2233)]
+2023-01-30 02:29:13.399 ERROR (MainThread) [homeassistant] Error doing job: Unclosed client session
+2023-01-30 02:29:14.947 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:00.704 ERROR (MainThread) [homeassistant.components.freebox.config_flow] Unknown error connecting with Freebox router at kkamv5xe.fbxos.fr
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 986, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1064, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 1049, in create_connection
+    sock = await self._connect_sock(
+  File "/usr/local/lib/python3.10/asyncio/base_events.py", line 960, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 500, in sock_connect
+    return await fut
+  File "/usr/local/lib/python3.10/asyncio/selector_events.py", line 535, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 111] Connect call failed ('88.160.161.86', 2233)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/freebox/config_flow.py", line 75, in async_step_link
+    await fbx.open(self._host, self._port)
+  File "/usr/local/lib/python3.10/site-packages/freebox_api/aiofreepybox.py", line 83, in open
+    self._access = await self._get_freebox_access(
+  File "/usr/local/lib/python3.10/site-packages/freebox_api/aiofreepybox.py", line 162, in _get_freebox_access
+    app_token, track_id = await self._get_app_token(base_url, app_desc, timeout)
+  File "/usr/local/lib/python3.10/site-packages/freebox_api/aiofreepybox.py", line 226, in _get_app_token
+    r = await self._session.post(url, data=data, timeout=timeout)
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/client.py", line 535, in _request
+    conn = await self._connector.connect(
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 542, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 907, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 1175, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "/usr/local/lib/python3.10/site-packages/aiohttp/connector.py", line 992, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host kkamv5xe.fbxos.fr:2233 ssl:default [Connect call failed ('88.160.161.86', 2233)]
+2023-01-30 02:30:10.273 ERROR (Recorder) [homeassistant] Error doing job: Unclosed client session
+2023-01-30 02:30:49.128 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:49.171 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:49.202 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:49.216 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:49.278 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:49.300 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:49.355 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:49.412 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:49.538 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:49.588 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:50.214 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:51.679 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:30:53.326 ERROR (MainThread) [frontend.js.latest.202301100] :0:0 ResizeObserver loop completed with undelivered notifications.
+2023-01-30 02:38:40.731 WARNING (MainThread) [homeassistant.helpers.frame] Detected integration that calls media_source.async_resolve_media without passing an entity_id. Please report issue for media_source using this method at homeassistant/components/media_source/__init__.py, line 147: report("calls media_source.async_resolve_media without passing an entity_id")
